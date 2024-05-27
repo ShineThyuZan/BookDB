@@ -67,7 +67,7 @@ fun BookListView(
                 BookItem(
                     modifier = modifier,
                     title = currentItem.bookTitle,
-                    subtitle = currentItem.bookSubtitle,
+                    subtitle = currentItem.authors,
                     imageURl = currentItem.bookImage,
                     bookId = currentItem.bookId,
                //     favOrNotState = favOrNotState,
@@ -91,7 +91,7 @@ fun BookFavListView(
                 BookFavItem(
                     modifier = modifier,
                     title = currentItem.bookTitle,
-                    subtitle = currentItem.bookSubtitle,
+                    subtitle = currentItem.authors,
                     imageURl = currentItem.bookImage,
                     bookId = currentItem.bookId,
                     //     favOrNotState = favOrNotState,
@@ -135,14 +135,16 @@ fun BookItem(
                     .fillMaxWidth()
                     .padding(all = 8.dp),
                 text = title,
-                style = MaterialTheme.typography.subtitle1
+                style = MaterialTheme.typography.h5,
+                maxLines = 2
             )
             Text(
                 modifier = modifier
                     .fillMaxWidth()
                     .padding(all = 8.dp),
                 text = subtitle,
-                style = MaterialTheme.typography.overline
+                style = MaterialTheme.typography.subtitle1,
+                maxLines = 3
             )
             Text(
                 modifier = modifier
@@ -193,14 +195,14 @@ fun BookFavItem(
                     .fillMaxWidth()
                     .padding(all = 8.dp),
                 text = title,
-                style = MaterialTheme.typography.subtitle1
+                style = MaterialTheme.typography.h5
             )
             Text(
                 modifier = modifier
                     .fillMaxWidth()
                     .padding(all = 8.dp),
                 text = subtitle,
-                style = MaterialTheme.typography.overline
+                style = MaterialTheme.typography.subtitle1
             )
             Text(
                 modifier = modifier

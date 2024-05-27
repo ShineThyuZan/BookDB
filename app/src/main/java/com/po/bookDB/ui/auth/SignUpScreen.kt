@@ -69,8 +69,8 @@ fun SignUpScreen(
     if (loginUiState!!.userNameSignUp.isNotBlank() &&
         loginUiState.passwordSignUp.isNotBlank() &&
         loginUiState.confirmPasswordSignUp.isNotBlank() &&
-        (loginUiState.passwordSignUp.length >= 8) &&
-        (loginUiState.confirmPasswordSignUp.length >= 8)
+        (loginUiState.passwordSignUp.length >= 4) &&
+        (loginUiState.confirmPasswordSignUp.length >= 4)
     ) {
         signUpBtnState.value = true
     }
@@ -81,9 +81,6 @@ fun SignUpScreen(
         }
     }
 
-//    if(loginUiState.isRegisterSuccess){
-//        onNavToLoginPage()
-//    }
     LaunchedEffect(key1 = loginViewModel.hasUser) {
         if (loginViewModel.hasUser) {
             // onNavToHomePage.invoke()

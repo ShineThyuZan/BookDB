@@ -63,7 +63,7 @@ class BookViewModel @Inject constructor(
             _bookApiData.value = bookApiData.value.copy(
                 books = Resource.Loading()
             )
-            useCase(query = "of").collect { bookData ->
+            useCase(query = "the").collect { bookData ->
                 bookData.let {
                     _bookApiData.value = bookApiData.value.copy(
                         books = bookData

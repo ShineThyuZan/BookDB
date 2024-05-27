@@ -142,7 +142,7 @@ fun LoginScreen(
                             },
                             keyboardAction = { keyboardController!!.hide() },
                             isError = isError ?: false,
-                            errorMessage = "Password length must be at least 8 ( eg.kozaw123 )",
+                            errorMessage = "Password length must be at least 4 ( eg.kozaw123 )",
                             password = loginUiState.password,
                             imeAction = ImeAction.Done,
                             keyboardType = KeyboardType.Password,
