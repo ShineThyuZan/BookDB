@@ -39,7 +39,7 @@ class BookViewModel @Inject constructor(
                 viewModelScope.launch {
                         _bookEvent.emit(
                             BookEvent.ShowSnackBar(
-                                message = "${action.bookObj.bookTitle} favorite"
+                                message = "${action.bookObj.bookTitle} to favorite list"
                             )
                         )
                     useCaseFavInsert.invoke(action.bookObj)

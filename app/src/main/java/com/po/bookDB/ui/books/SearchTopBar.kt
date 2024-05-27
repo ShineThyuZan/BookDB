@@ -27,7 +27,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import com.po.bookDB.R
 import com.po.bookDB.ui.theme.resources.dimen
 
-
 @Composable
 fun SearchTopBar(
     onNavigation: @Composable () -> Unit = {},
@@ -95,7 +94,7 @@ fun SearchTopBar(
                 if (searchQuery.isNotEmpty()) {
                     IconButton(onClick = onClearSearchQuery) {
                         Icon(
-                            painter = painterResource(id = R.drawable.outline_arrow_back_ios_24),
+                            painter = painterResource(id = R.drawable.ic_cross),
                             contentDescription = null
                         )
                     }

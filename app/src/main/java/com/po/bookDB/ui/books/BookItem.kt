@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -91,7 +92,6 @@ fun BookItem(
             .fillMaxWidth()
             .padding(horizontal = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         AsyncImage(
             model = imageURl,
@@ -104,9 +104,7 @@ fun BookItem(
                 .fillMaxWidth()
                 .clip(shape = RoundedCornerShape(12.dp))
                 .padding(all = 12.dp)
-                .clickable {
-                    onFavItemClick()
-                },
+                .weight(1f),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
@@ -130,8 +128,12 @@ fun BookItem(
                 text = bookId,
                 style = MaterialTheme.typography.overline
             )
-            Spacer(modifier = modifier.height(8.dp))
+            Spacer(modifier = modifier.height(4.dp))
         }
+        OutlinedButton(onClick = {  onFavItemClick() }) {
+            androidx.compose.material3.Text(text = "Fav")
+        }
+        Spacer(modifier = modifier.height(4.dp))
     }
 }
 
