@@ -11,6 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.po.bookDB.R
 import com.po.bookDB.ui.viewModel.BookEvent
+import com.po.bookDB.ui.viewModel.BookFavAction
 import com.po.bookDB.ui.viewModel.BookViewModel
 
 
@@ -73,7 +74,11 @@ fun BookSearchView(
         Modifier.padding(it)
         BookContent(
             onItemClicked = { id ->
-            },
+                vm.onBookAction(
+                    BookFavAction.ClickFav(
+                        bookObj = id
+                    )
+                )            },
             resourceBook = vm.bookApiData.value.searchData,
             onRetry = {},
         )

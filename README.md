@@ -6,7 +6,7 @@
 + Search Books Feature
 + Favorite Book Feature
 + Logout Feature
-+ 
+
 ### To Login 
 - user name - kosoe@gmail.com , redgirl@gmail.com , whitegirl@gmail.com
 - password -123123123
@@ -27,7 +27,7 @@
 oad Link [this link](https://github.com/ShineThyuZan/BookDB.git)
 
 ### Show Sample Screen 
-<div style="display: flex; justify-content: center; padding: 100px; ">
+<div style="display: flex; justify-content: center; padding: 150px; ">
 <img src="https://github.com/ShineThyuZan/BookDB/blob/main/app/src/main/res/drawable-v24/bs1.png" alt="Login Screenshot" width="190" height="380">
 <img src="https://github.com/ShineThyuZan/BookDB/blob/main/app/src/main/res/drawable-v24/bs2.png" alt="Sign Up Screenshot" width="190" height="380">
   <img src="https://github.com/ShineThyuZan/BookDB/blob/main/app/src/main/res/drawable-v24/bs3.png" alt="PhotoAlbum Home Screenshot" width="190" height="380">

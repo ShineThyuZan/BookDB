@@ -77,6 +77,29 @@ fun BookListView(
         }
     )
 }
+@Composable
+fun BookFavListView(
+    modifier: Modifier = Modifier,
+    book: List<BookEntity>,
+) {
+    LazyColumn(
+        content = {
+            items(
+                count = book.size
+            ) { index ->
+                val currentItem = book[index]
+                BookFavItem(
+                    modifier = modifier,
+                    title = currentItem.bookTitle,
+                    subtitle = currentItem.bookSubtitle,
+                    imageURl = currentItem.bookImage,
+                    bookId = currentItem.bookId,
+                    //     favOrNotState = favOrNotState,
+                         )
+            }
+        }
+    )
+}
 
 @Composable
 fun BookItem(
@@ -136,5 +159,61 @@ fun BookItem(
         Spacer(modifier = modifier.height(4.dp))
     }
 }
+
+@Composable
+fun BookFavItem(
+    modifier: Modifier = Modifier,
+    title: String,
+    subtitle: String,
+    imageURl: String,
+    bookId: String,
+) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        AsyncImage(
+            model = imageURl,
+            contentDescription = "image",
+            contentScale = ContentScale.Crop,
+            placeholder = painterResource(id = R.drawable.ic_launcher_background),
+        )
+        Column(
+            modifier = modifier
+                .fillMaxWidth()
+                .clip(shape = RoundedCornerShape(12.dp))
+                .padding(all = 12.dp)
+                .weight(1f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Text(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(all = 8.dp),
+                text = title,
+                style = MaterialTheme.typography.subtitle1
+            )
+            Text(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(all = 8.dp),
+                text = subtitle,
+                style = MaterialTheme.typography.overline
+            )
+            Text(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(all = 8.dp),
+                text = bookId,
+                style = MaterialTheme.typography.overline
+            )
+            Spacer(modifier = modifier.height(4.dp))
+        }
+    }
+}
+
+
 
 

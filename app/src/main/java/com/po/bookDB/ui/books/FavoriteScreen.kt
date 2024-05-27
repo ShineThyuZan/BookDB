@@ -84,14 +84,7 @@ fun BookView(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ){
-            BookListView(
-                onFavItemClick = { bookObj ->
-                    vm.onBookAction(
-                        BookFavAction.ClickFav(
-                            bookObj = bookObj
-                        )
-                    )
-                },
+            BookFavListView(
                 book = vm.bookApiData.value.favList,
             )
         }
